@@ -27,6 +27,8 @@ class CoffeeCalculator:
 
             if len(args) == 5:
                 self.lineLimit = float(args[4])
+            else:
+                self.lineLimit = None
 
         if self.group not in ['origin', 'roaster']:
             print(f'Incorrect argument: {self.group}')
