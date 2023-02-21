@@ -5,21 +5,19 @@ import os
 
 class CoffeeCalculator:
     def __init__(self, args):
-        self.filename = args[1]
-        self.group = args[2]
-        self.groupings = {}
-        self.rowCount = 0
-        self.printedLines = 0
-
-        self.validateInput(args)
+        if len(args) > 3 and len(args) < 6:
+            self.filename = args[1]
+            self.group = args[2]
+            self.groupings = {}
+            self.rowCount = 0
+            self.printedLines = 0
+            self.validateInput(args)
+        else:
+            print('Incorrect number of arguments.')
+            sys.exit(1)
 
     def validateInput(self, args):
         if os.stat(self.filename).st_size == 0:
-            print('File is empty.')
-            sys.exit(1)
-
-        if not (3 <= len(args) <= 5):
-            print('Incorrect number of arguments.')
             sys.exit(1)
 
         if len(args) >= 4:
@@ -91,10 +89,8 @@ class CoffeeCalculator:
                 print(f'{entry}: {self.groupings[entry][-1]}\n')
 
 
-
-calc = CoffeeCalculator(sys.argv)
-
 if __name__ == '__main__':
+    calc = CoffeeCalculator(sys.argv)
     calc.calculate()
     calc.calculateSelection()
     # calc.printGroups()
