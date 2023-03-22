@@ -1,10 +1,10 @@
 import json
 import os
-from Cafe import Cafe
-from Recipe import Recipe
 from Beverage import Beverage
+from Cafe import Cafe
 from Customer import Customer
 from Ingredient import Ingredient
+from Recipe import Recipe
 from Review import Review
 
 def load_data(file_path, obj_class):

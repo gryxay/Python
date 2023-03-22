@@ -1,6 +1,6 @@
-from Review import Review
 from Beverage import Beverage
 from Cafe import Cafe
+from Review import Review
 
 class Customer:
     

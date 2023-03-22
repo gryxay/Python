@@ -1,8 +1,8 @@
-from Cafe import Cafe
+import unittest
 from Beverage import Beverage
+from Cafe import Cafe
 from Customer import Customer
 from Review import Review
-import unittest
 
 class TestCafe(unittest.TestCase):
     
