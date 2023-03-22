@@ -1,0 +1,105 @@
+[
+{
+    "name": "Dave",
+    "balance": 3.5,
+    "discount": 0.1,
+    "order": [
+        {
+            "name": "Hot chocolate",
+            "recipe": {
+                "name": "Hot chocolate",
+                "ingredients": [
+                    {
+                        "name": "Milk",
+                        "calories": 70,
+                        "price": 0.25
+                    },
+                    {
+                        "name": "Chocolate",
+                        "calories": 100,
+                        "price": 0.5
+                    }
+                ],
+                "instructions": "long hot chocolate instructions..."
+            },
+            "price": 1.5
+        },
+        {
+            "name": "Mocha",
+            "recipe": {
+                "name": "Mocha",
+                "ingredients": [
+                    {
+                        "name": "Ground espresso",
+                        "calories": 50,
+                        "price": 0.35
+                    },
+                    {
+                        "name": "Water",
+                        "calories": 0,
+                        "price": 0.01
+                    },
+                    {
+                        "name": "Milk",
+                        "calories": 70,
+                        "price": 0.25
+                    },
+                    {
+                        "name": "Chocolate",
+                        "calories": 100,
+                        "price": 0.5
+                    }
+                ],
+                "instructions": "long mocha instructions..."
+            },
+            "price": 1.7
+        }
+    ],
+    "total": 3.2
+},
+{
+    "name": "Claire",
+    "balance": 4.2,
+    "discount": null,
+    "order": [
+        {
+            "name": "Mocha",
+            "recipe": {
+                "name": "Mocha",
+                "ingredients": [
+                    {
+                        "name": "Ground espresso",
+                        "calories": 50,
+                        "price": 0.35
+                    },
+                    {
+                        "name": "Water",
+                        "calories": 0,
+                        "price": 0.01
+                    },
+                    {
+                        "name": "Milk",
+                        "calories": 70,
+                        "price": 0.25
+                    },
+                    {
+                        "name": "Chocolate",
+                        "calories": 100,
+                        "price": 0.5
+                    }
+                ],
+                "instructions": "long mocha instructions..."
+            },
+            "price": 1.7
+        }
+    ],
+    "total": 1.7
+},
+{
+    "name": "Nikita",
+    "balance": 300.0,
+    "discount": null,
+    "order": [],
+    "total": 0
+}
+]
