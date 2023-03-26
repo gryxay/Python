@@ -14,7 +14,7 @@ class Recipe:
         return f'name: {self.name}, ingredients: {self.ingredients}, instructions: {self.instructions}'
 
     @staticmethod
-    def from_json(data: str) -> object:
+    def from_json(data: dict) -> object:
         ingredients = []
         for ingredient in data['ingredients']:
             ingredients.append(Ingredient.from_json(ingredient))

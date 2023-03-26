@@ -13,7 +13,7 @@ class Review:
         return f'author: {self.author}, rating: {self.rating}, description: {self.description}, date: {self.date}'
     
     @staticmethod
-    def from_json(data: str) -> object:
+    def from_json(data: dict) -> object:
         return Review(data['author'], data['rating'], data['description'], data['date'])
 
     def to_json(self) -> object:

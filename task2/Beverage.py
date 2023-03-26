@@ -14,7 +14,7 @@ class Beverage:
         return f'name: {self.name}, recipe: {self.recipe}, price: {self.price}'
 
     @staticmethod
-    def from_json(data: str) -> object:
+    def from_json(data: dict) -> object:
         recipe = Recipe.from_json(data['recipe'])
         return Beverage(data['name'], recipe, data['price'])
 
@@ -26,13 +26,10 @@ class Beverage:
             'price': round(self.price, 2),
         }
 
-    def calculatePPU(self) -> float:
-        #calculates production price per unit
-        price = 0
-        for ingredient in self.recipe.ingredients:
-            price += ingredient.price
-
-        return round(float(price), 2)
+    def calculate_ppu(self) -> float:
+        # calculates production price per unit
+        price = sum(ingredient.price for ingredient in self.recipe.ingredients)
+        return float(round(price, 2))
     
     def calculate_calories(self) -> int:
         calories = 0

@@ -12,7 +12,7 @@ class Ingredient:
         return f'name: {self.name}, calories: {self.calories}, price: {self.price}'
     
     @staticmethod
-    def from_json(data: str) -> object:
+    def from_json(data: dict) -> object:
         return Ingredient(data['name'], data['calories'], data['price'])
 
     def to_json(self) -> object:

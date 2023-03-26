@@ -18,7 +18,7 @@ class Cafe:
         return f'name: {self.name}, address: {self.location}\nmenu: {list(map(lambda x: x.__repr__(), self.menu))}\nreviews: {self.reviews}\n'
 
     @staticmethod
-    def from_json(data: str) -> object:
+    def from_json(data: dict) -> object:
         beverages = []
         reviews = []
         for beverage in data['menu']:
@@ -64,7 +64,6 @@ class Cafe:
         raise ValueError(f'Menu item to be removed not in menu: {beverage.name}')
 
     def place_order(self, customer, total: float, balance: float) -> bool:
-        float(balance)
         assert total <= balance, 'Balance insufficient: {customer.balance}'
         print('Order successful!')
         customer.balance -= total
@@ -84,9 +83,12 @@ class Cafe:
     def calculate_average_time_between_reviews(self) -> int:
         if len(self.reviews) < 2:
             return None
+        
+        sorted_reviews = sorted(self.reviews, key=lambda x: x.date, reverse=True)
         deltas = []
-        for i in range(1, len(self.reviews)):
-            delta = datetime.strptime(self.reviews[i-1].date, '%Y-%m-%d') - datetime.strptime(self.reviews[i].date, '%Y-%m-%d')
+        for i in range(1, len(sorted_reviews)):
+            # find difference between 2 dates
+            delta = datetime.strptime(sorted_reviews[i-1].date, '%Y-%m-%d') - datetime.strptime(sorted_reviews[i].date, '%Y-%m-%d')
             deltas.append(delta.days)
-        average_time = abs(sum(deltas)/(len(self.reviews)-1))
-        return round(int(average_time),2)
+        average_time = sum(deltas)/(len(sorted_reviews)-1)
+        return round(average_time)

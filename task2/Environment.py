@@ -67,7 +67,7 @@ print(f'Cafe latitude and longitude: {cafes[0].get_location_from_address()}')
 
 print('\nPrice per unit for all beverages:')
 for beverage in beverages:
-    print(f'{beverage.name}: {beverage.calculatePPU()}')
+    print(f'{beverage.name}: {beverage.calculate_ppu()}')
 
 new_cafe = Cafe('New Cafe', 'Address 123')
 new_cafe.add_menu_item(beverages[1])
