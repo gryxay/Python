@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cafes Information</title>
+</head>
+<body>
+    <h1>Cafes Information</h1>
+    
+    <form method="GET" action="/">
+        <input type="text" name="query" placeholder="Search for cafe names or review authors">
+        <input type="submit" value="Search">
+    </form>
+    
+    <ul>
+        {% for cafe in cafes %}
+        <li>
+            <strong>Name:</strong> <a href="/cafe/{{ cafe[0] }}">{{ cafe[1] }}</a><br>
+            <strong>Location:</strong> {{ cafe[2] }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

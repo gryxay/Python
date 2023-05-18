@@ -1,0 +1,22 @@
+[
+{
+    "name": "Chocolate",
+    "calories": 100,
+    "price": 0.5
+},
+{
+    "name": "Ground espresso",
+    "calories": 50,
+    "price": 0.35
+},
+{
+    "name": "Milk",
+    "calories": 70,
+    "price": 0.25
+},
+{
+    "name": "Water",
+    "calories": 0,
+    "price": 0.01
+}
+]

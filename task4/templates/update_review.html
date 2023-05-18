@@ -1,0 +1,21 @@
+<!-- update_review.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Review</title>
+</head>
+<body>
+    <h1>Update Review</h1>
+    <form method="POST" action="/update_review/{{ cafe_id }}/{{ review_id }}">
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" placeholder="{{ review[0] }}" value="{{ review[2] }}" required><br>
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" name="rating" placeholder="{{ review[1] }}" value="{{ review[3] }}" min="0" max="5" required><br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required>{{ review[4] }}</textarea><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" placeholder="{{ review[3] }}" value="{{ review[5] }}" required><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!-- cafe_details.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cafe Details</title>
+    <style>
+        .button-container {
+            margin-top: 10px;
+        }
+        .delete-button,
+        .update-button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cafe Details</h1>
+
+    <h2>{{ cafe[1] }}</h2>
+    <p>Location: {{ cafe[2] }}</p>
+
+    <h3>Menu</h3>
+    <ul>
+    {% for beverage in beverages %}
+        <li>
+            <strong>Name:</strong> {{ beverage[2] }}<br>
+            <strong>Recipe:</strong> {{ beverage[3] }}<br>
+            <strong>Price:</strong> {{ beverage[4] }}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <h3>Reviews</h3>
+    <ul>
+    {% for review in reviews %}
+        <li>
+            <strong>Author:</strong> {{ review[2] }}<br>
+            <strong>Rating:</strong> {{ review[3] }}<br>
+            <strong>Description:</strong> {{ review[4] }}<br>
+            <strong>Date:</strong> {{ review[5] }}
+            <form method="POST" action="/delete_review/{{ cafe[0] }}/{{ review[0] }}">
+                <button type="submit" class="delete-button">Delete</button>
+            </form>
+            <form method="GET" action="/update_review/{{ cafe[0] }}/{{ review[0] }}">
+                <button type="submit" class="update-button">Update</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <div class="button-container">
+        <a href="/add_review/{{ cafe[0] }}">
+            <button>Add Review</button>
+        </a>
+    </div>
+
+</body>
+</html>
